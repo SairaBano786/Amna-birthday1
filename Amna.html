@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Happy Birthday Amna Saleem</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Georgia, serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f5f0ff;
+            color: #38204f;
+            overflow-x: hidden;
+        }
+
+        /* ================= FIRST PAGE ================= */
+
+        .home {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+
+            background:
+                radial-gradient(circle at top left, #d9c7ff, transparent 35%),
+                radial-gradient(circle at bottom right, #ffc5e5, transparent 35%),
+                linear-gradient(135deg, #6d4bb3, #b86ca8, #718ed1);
+        }
+
+        .content {
+            position: relative;
+            z-index: 5;
+            padding: 25px;
+        }
+
+        .top-text {
+            color: white;
+            font-size: 16px;
+            letter-spacing: 5px;
+            font-weight: bold;
+            text-shadow: 0 2px 8px #3c2058;
+        }
+
+        .birthday {
+            margin: 25px 0 10px;
+            font-size: 200px;
+            font-weight: bold;
+            font-family: "Brush Script MT", cursive;
+            color: white;
+
+            text-shadow:
+                0 0 5px white,
+                0 0 15px #ffc4ed,
+                0 0 30px #e99cff;
+
+            animation: glow 2s infinite alternate;
+        }
+
+        .name {
+            font-size: 100px;
+            font-family: "Brush Script MT", cursive;
+            color: #ffe0f4;
+
+            text-shadow:
+                3px 3px 0 #663b91,
+                0 0 15px white;
+
+            animation: floatName 3s infinite ease-in-out;
+        }
+
+        .date {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+
+            background: rgba(255,255,255,0.92);
+            color: #693c91;
+
+            border-radius: 40px;
+            font-size: 30px;
+            font-weight: bold;
+
+            box-shadow: 0 8px 25px rgba(30,10,60,.3);
+        }
+
+        .button {
+            margin-top: 30px;
+            padding: 15px 32px;
+
+            border: none;
+            border-radius: 40px;
+
+            background: linear-gradient(90deg,#8b5cf6,#d946a6);
+            color: white;
+
+            font-size: 25px;
+            font-weight: bold;
+
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(40,20,80,.3);
+
+            transition: .3s;
+        }
+
+        .button:hover {
+            transform: scale(1.08);
+        }
+
+
+        /* ================= BALLOONS ================= */
+
+        .balloon {
+            position: absolute;
+            font-size: 100px;
+            animation: balloon 5s infinite ease-in-out;
+        }
+
+        .b1 {
+            left: 5%;
+            top: 15%;
+        }
+
+        .b2 {
+            right: 7%;
+            top: 18%;
+            animation-delay: 1s;
+        }
+
+        .b3 {
+            left: 12%;
+            bottom: 12%;
+            animation-delay: 2s;
+        }
+
+        .b4 {
+            right: 12%;
+            bottom: 10%;
+            animation-delay: 3s;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 50px;
+            animation: hearts 7s linear infinite;
+        }
+
+        .h1 {
+            left: 20%;
+            bottom: -30px;
+        }
+
+        .h2 {
+            left: 50%;
+            bottom: -40px;
+            animation-delay: 2s;
+        }
+
+        .h3 {
+            right: 20%;
+            bottom: -30px;
+            animation-delay: 4s;
+        }
+
+
+        /* ================= WISH ================= */
+
+        .wish {
+            padding: 80px 20px;
+            text-align: center;
+
+            background:
+                linear-gradient(135deg,#f7efff,#ffe9f5,#e9efff);
+        }
+
+        .heading {
+            font-size: 100px;
+            color: #6c3e91;
+            margin-bottom: 30px;
+        }
+
+        .wish-box {
+            max-width:1200px;
+            margin: auto;
+
+            padding: 40px;
+
+          background:linear-gradient(135deg,#d9a7ff,#a8edea);
+            border-radius: 30px;
+
+            box-shadow: 0 12px 35px rgba(70,40,100,.15);
+
+            font-size: 30px;
+            line-height: 1.8;
+        }
+
+
+        /* ================= CLICKABLE CARDS ================= */
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .card {
+            width: 210px;
+            padding: 28px 18px;
+
+            background: linear-gradient(145deg,#ffffff,#f1e9ff);
+
+            border: 2px solid #e1d0fa;
+            border-radius: 25px;
+
+            cursor: pointer;
+            transition: .4s;
+
+            box-shadow: 0 8px 25px rgba(80,40,110,.12);
+        }
+
+        .card:hover {
+            transform: translateY(-10px) rotate(2deg);
+        }
+
+        .icon {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            color: #8145a4;
+        }
+
+        .message {
+            display: none;
+            margin-top: 15px;
+            line-height: 1.5;
+            color: #60466d;
+        }
+
+        .card.active .message {
+            display: block;
+        }
+
+
+        /* ================= PHOTO GALLERY ================= */
+
+        .gallery {
+            padding: 80px 20px;
+            text-align: center;
+          background:linear-gradient(135deg,#d9a7ff,#a8edea);
+        }
+
+        .photos {
+            max-width: 950px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .photo {
+            height: 320px;
+
+            border: 8px solid white;
+            border-radius: 25px;
+
+            background: white;
+            overflow: hidden;
+
+            cursor: pointer;
+
+            box-shadow: 0 10px 25px rgba(70,40,100,.15);
+
+            transition: .4s;
+        }
+
+        .photo:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 35px rgba(70,40,100,.25);
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+            object-position: center;
+
+            transition: .4s;
+        }
+
+        .photo:hover img {
+            transform: scale(1.05);
+        }
+
+
+        /* ================= BIG PHOTO ================= */
+
+        .photo-modal {
+            display: none;
+
+            position: fixed;
+
+            z-index: 9999;
+
+            left: 0;
+            top: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background: rgba(20,10,30,.90);
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 25px;
+        }
+
+        .photo-modal.active {
+            display: flex;
+        }
+
+        .photo-modal img {
+            max-width: 92%;
+            max-height: 88%;
+
+            width: auto;
+            height: auto;
+
+            object-fit: contain;
+
+            border: 6px solid white;
+            border-radius: 20px;
+
+            box-shadow: 0 15px 50px rgba(0,0,0,.5);
+
+            animation: zoomPhoto .3s ease;
+        }
+
+        .close-photo {
+            position: absolute;
+
+            top: 20px;
+            right: 30px;
+
+            width: 50px;
+            height: 50px;
+
+            border: none;
+            border-radius: 50%;
+
+            background: white;
+            color: #6c3e91;
+
+            font-size: 32px;
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .close-photo:hover {
+            transform: scale(1.1);
+        }
+
+
+        /* ================= SURPRISE ================= */
+
+        .surprise {
+            padding: 90px 20px;
+            min-height: 65vh;
+
+            text-align: center;
+
+            background:
+                linear-gradient(135deg,#e6dbff,#ffdcef,#dce8ff);
+        }
+
+        .surprise-message {
+            display: none;
+
+            max-width: 650px;
+            margin: 30px auto;
+
+            padding: 35px;
+
+            background: white;
+            border-radius: 30px;
+
+            font-size: 30px;
+            line-height: 1.8;
+
+            box-shadow: 0 12px 35px rgba(70,40,100,.18);
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            padding: 25px;
+            text-align: center;
+
+            background: #39215c;
+            color: white;
+        }
+
+
+        /* ================= ANIMATIONS ================= */
+
+        @keyframes glow {
+
+            from {
+                transform: scale(1);
+
+                text-shadow:
+                    0 0 5px white,
+                    0 0 15px #ffc4ed;
+            }
+
+            to {
+                transform: scale(1.05);
+
+                text-shadow:
+                    0 0 10px white,
+                    0 0 30px #ffb2e3,
+                    0 0 45px #dca5ff;
+            }
+        }
+
+        @keyframes floatName {
+
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        @keyframes balloon {
+
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+
+        @keyframes hearts {
+
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+
+            30% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+        }
+
+        @keyframes zoomPhoto {
+
+            from {
+                transform: scale(.7);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width:600px) {
+
+            .birthday {
+                font-size: 52px;
+            }
+
+            .name {
+                font-size: 42px;
+            }
+
+            .heading {
+                font-size: 32px;
+            }
+
+            .balloon {
+                font-size: 42px;
+            }
+
+            .photos {
+                grid-template-columns: 1fr;
+            }
+
+            .photo {
+                height: 320px;
+            }
+
+            .photo-modal img {
+                max-width: 95%;
+                max-height: 82%;
+            }
+
+            .close-photo {
+                top: 10px;
+                right: 15px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= FIRST PAGE ================= -->
+
+<section class="home">
+
+    <div class="balloon b1">🎈</div>
+    <div class="balloon b2">🎈</div>
+    <div class="balloon b3">🎈</div>
+    <div class="balloon b4">🎈</div>
+
+    <div class="heart h1">💗</div>
+    <div class="heart h2">💖</div>
+    <div class="heart h3">💕</div>
+
+
+    <div class="content">
+
+        <div class="top-text">
+            ✨ A SPECIAL DAY FOR A SPECIAL SISTER ✨
+        </div>
+
+        <div class="birthday">
+            Happy Birthday
+        </div>
+
+        <div class="name">
+            Amna Saleem 💗
+        </div>
+
+        <div class="date">
+            🎀 7 October 🎀
+        </div>
+
+        <br>
+
+        <button class="button"
+        onclick="document.getElementById('wishes').scrollIntoView()">
+
+            💌 Open Birthday Wishes
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= WISHES ================= -->
+
+<section class="wish" id="wishes">
+
+    <h2 class="heading">
+        💗 For My Lovely Sister 💗
+    </h2>
+
+
+    <div class="wish-box">
+
+        <p>
+            Happy Birthday to my beautiful sister,
+            <b>Amna Saleem! 🎂💖</b>
+        </p>
+
+        <br>
+
+        <p>
+            May Allah bless your life with endless happiness,
+            success, peace and beautiful moments.
+
+            May every dream you have come true
+            and may your smile always stay bright.
+        </p>
+
+        <br>
+
+        <p>
+            You are not just my sister,
+            you are a beautiful part of my life.
+
+            I pray that every coming year brings
+            more happiness, love and success for you. 🌸
+        </p>
+
+        <br>
+
+        <b>
+            Stay happy. Stay blessed. Keep smiling! 💕
+        </b>
+
+    </div>
+
+
+
+    <!-- CLICKABLE CARDS -->
+
+    <div class="cards">
+
+
+        <div class="card"
+        onclick="this.classList.toggle('active')">
+
+            <div class="icon">🎁</div>
+
+            <h3>Your Special Day</h3>
+
+            <div class="message">
+                Today is all about celebrating
+                the wonderful person you are! 💗
+            </div>
+
+        </div>
+
+
+
+        <div class="card"
+        onclick="this.classList.toggle('active')">
+
+            <div class="icon">🌟</div>
+
+            <h3>Your Dreams</h3>
+
+            <div class="message">
+                May you achieve every beautiful
+                dream in your heart. ✨
+            </div>
+
+        </div>
+
+
+
+        <div class="card"
+        onclick="this.classList.toggle('active')">
+
+            <div class="icon">🌸</div>
+
+            <h3>Stay Happy</h3>
+
+            <div class="message">
+                Keep smiling because your smile
+                makes everything brighter. 🌸
+            </div>
+
+        </div>
+
+
+
+        <div class="card"
+        onclick="this.classList.toggle('active')">
+
+            <div class="icon">👑</div>
+
+            <h3>Always Be You</h3>
+
+            <div class="message">
+                Never change the beautiful person
+                you are. 💕
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PHOTO SECTION ================= -->
+
+<section class="gallery">
+
+    <h2 class="heading">
+        📸 Our Beautiful Memories
+    </h2>
+
+
+    <div class="photos">
+
+
+        <!-- PHOTO 1 -->
+
+        <div class="photo"
+        onclick="openPhoto('amna1.jpeg')">
+
+            <img
+            src="amna1.jpeg"
+            alt="Amna Memory 1">
+
+        </div>
+
+
+
+        <!-- PHOTO 2 -->
+
+        <div class="photo"
+        onclick="openPhoto('amna2.jpeg')">
+
+            <img
+            src="amna2.jpeg"
+            alt="Amna Memory 2">
+
+        </div>
+
+
+
+        <!-- PHOTO 3 -->
+
+        <div class="photo"
+        onclick="openPhoto('amna3.jpeg')">
+
+            <img
+            src="amna3.jpeg"
+            alt="Amna Memory 3">
+
+        </div>
+
+
+
+        <!-- PHOTO 4 -->
+
+        <div class="photo"
+        onclick="openPhoto('amna4.jpeg')">
+
+            <img
+            src="amna4.jpeg"
+            alt="Amna Memory 4">
+
+        </div>
+
+    </div>
+
+
+    <p style="margin-top:25px;color:#755b83;">
+
+     <font-size;20px;> 💕  click every image beloved sister. 💕</font-size>
+
+    </p>
+
+
+</section>
+
+
+
+<!-- ================= BIG PHOTO POPUP ================= -->
+
+<div class="photo-modal"
+id="photoModal"
+onclick="closePhoto(event)">
+
+
+    <button class="close-photo"
+    onclick="closePhoto()">
+
+        ×
+
+    </button>
+
+
+    <img
+    id="bigPhoto"
+    src=""
+    alt="Big Memory">
+
+</div>
+
+
+
+<!-- ================= SURPRISE ================= -->
+
+<section class="surprise">
+
+    <h2 class="heading">
+        🎀 One More Surprise 🎀
+    </h2>
+
+
+    <button class="button"
+    onclick="showSurprise()">
+
+        🎁 Click For Surprise
+
+    </button>
+
+
+    <div class="surprise-message"
+    id="surprise">
+
+        🎉✨ Happy Birthday Amna! ✨🎉
+
+        <br><br>
+
+        May your life always be filled with
+        happiness, beautiful memories,
+        success and lots of love. 💗
+
+        <br><br>
+
+        🌸 Keep Smiling 🌸
+
+        <br>
+
+        👑 Keep Shining 👑
+
+        <br>
+
+        💕 Always Stay Blessed 💕
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    Made with 💗 especially for Amna Saleem
+
+    <br>
+
+    🎂 7 October 🎂
+
+</footer>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+
+/* SURPRISE BUTTON */
+
+function showSurprise() {
+
+    let box = document.getElementById("surprise");
+
+    if(box.style.display === "block") {
+
+        box.style.display = "none";
+
+    }
+
+    else {
+
+        box.style.display = "block";
+
+    }
+
+}
+
+
+
+/* OPEN BIG PHOTO */
+
+function openPhoto(photoName) {
+
+    let modal =
+    document.getElementById("photoModal");
+
+    let bigPhoto =
+    document.getElementById("bigPhoto");
+
+
+    bigPhoto.src = photoName;
+
+    modal.classList.add("active");
+
+}
+
+
+
+/* CLOSE BIG PHOTO */
+
+function closePhoto(event) {
+
+    if(event &&
+       event.target.id !== "photoModal") {
+
+        return;
+
+    }
+
+
+    let modal =
+    document.getElementById("photoModal");
+
+    let bigPhoto =
+    document.getElementById("bigPhoto");
+
+
+    modal.classList.remove("active");
+
+    bigPhoto.src = "";
+
+}
+
+
+
+/* ESC KEY SE CLOSE */
+
+document.addEventListener("keydown",
+
+function(event) {
+
+    if(event.key === "Escape") {
+
+        document
+        .getElementById("photoModal")
+        .classList.remove("active");
+
+        document
+        .getElementById("bigPhoto")
+        .src = "";
+
+    }
+
+});
+
+</script>
+
+
+</body>
+</html>
